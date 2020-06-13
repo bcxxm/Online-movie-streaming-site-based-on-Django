@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    {% block title %}<title>base.html</title> {% endblock %}
+    <script rel="script" type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script rel="script" type="text/javascript" src="{%  static 'polltest/js/headItem.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/polltest/css/base.css' %}">
+{#    <script rel="script" type="text/javascript" src="{%  static 'polltest/js/headItem.js' %}"></script>#}
+    {% block head %} {% endblock %}
+</head>
+<body>
+<div class="total">
+    <!--头部上部分开始-->
+    <div class="head">
+    <!--logo开始-->
+        <div class="logo clearfix">
+            <img src="{% static 'polltest/img/logo.png' %}">
+        </div>
+    <!--logo结束-->
+    <!--收藏留言开始-->
+        <div class="head_a">
+{#            <a href="#">收藏本站</a>#}
+            <a href="/QuickMark/" target="_blank">
+                点击关注公众号，有你想要的资源
+            </a>
+        </div>
+    <!--收藏留言结束-->
+    <!--搜索栏开始-->
+        <div class="search" id="search">
+            <span class="ts" id="ts"></span>
+            <form class="search_form" id="search_form" onsubmit="verify()" method="GET" target="_blank">
+                <input name="text" id="search_form_text" class="search_form_text" type="text" placeholder="请输入搜索内容" >
+                <input class="search_form_bt" type="submit"  value="搜索">
+            </form>
+            <p>
+                <span>2019热门搜索：</span>
+                <a href="/search/反贪风暴">反贪风暴</a>
+                <a href="/search/复仇者联盟">复仇者联盟</a>
+                <a href="/search/大江大河">大江大河</a>
+                <a href="/search/将夜">将夜</a>
+                <a href="/search/斗破苍穹">斗破苍穹</a>
+                <a href="/search/火王">火王</a>
+                <a href="/search/杰森·斯坦森">杰森·斯坦森</a>
+            </p>
+        </div>
+    <!--搜索栏结束-->
+    </div>
+    <!--头部下部分开始-->
+    <div class="head_item clearfix">
+        <ul class="head_item_ul clearfix" id="item">
+            <li><a href="/">首页</a></li>
+            <li><a href="/hot/">热门影片</a></li>
+            <li><a href="/teleplay/">电视剧</a></li>
+            <li><a href="/movie/">电影</a></li>
+{#            <li><a href="#">欧美电影</a></li>#}
+            <li><a href="/comic/">动漫</a></li>
+{#            <li><a href="#">日韩动漫</a></li>#}
+            <li><a href="/VarietyShow/">综艺</a></li>
+{#            <li><a href="/threed_movie/">3D电影</a></li>#}
+        </ul>
+
+        <div class="movie_classify clearfix">
+            <p>
+                <span> <strong>电影</strong></span>
+                <a href="/movie/MovieAction">动作片&#124</a>
+                <a href="/movie/MovieLove">爱情片&#124</a>
+                <a href="/movie/MovieComedy">喜剧片&#124</a>
+                <a href="/movie/MovieScience">科幻片&#124</a>
+                <a href="/movie/MovieWar">战争片&#124</a>
+                <a href="/movie/MoviePlot">剧情片&#124</a>
+            </p>
+        </div>
+        <div class="teleplay_classify clearfix">
+            <p>
+                <span> <strong>电视剧</strong></span>
+                <a href="/teleplay/TvMLS">国产剧&#124</a>
+                <a href="/teleplay/TvHKT">港台剧&#124</a>
+                <a href="/teleplay/TvEA">欧美剧&#124</a>
+                <a href="/teleplay/TvJSK">日韩剧&#124</a>
+                <a href="/teleplay/TvOverSeas">海外剧&#124</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% block base %} {% endblock %}
+<!--底部开始-->
+<div class="footer">
+    <p>关于本站 - 网站帮助 - 广告合作 - 下载声明 - 友情连接 - 网站地图 - RSS订阅</p>
+    <p>杰士凡影院,杰士凡电影网为非赢利性站点，若收录的节目无意侵犯了贵司版权，请联系我们删除。 </p>
+    <p>本网站提供的在线资源均系收集于各大视频网站，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传</p>
+    <p>Copyright @ 2016 杰士凡影视-www.jiesfan.com All Rights Reserved 粤ICP备16121919号</p>
+    <br>
+</div>
+</body>
+<script>
+    function verify(){
+        var forms = document.getElementById("search_form")
+        var searchs = document.getElementById("search_form_text")
+        var ts = document.getElementById("ts")
+        if(searchs.value.length == 0){
+            forms.action = "javascript:void(0)"
+            {#ts.innerText = "请输入内容"#}
+        }
+        else{
+            forms.action="/search/"+searchs.value
+        }
+}
+</script>
+{% block script %} {% endblock %}
+</html>

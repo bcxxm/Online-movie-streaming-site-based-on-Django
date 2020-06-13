@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0}
+body{margin:0 auto;width: 1000px;}
+.qm{
+    margin: 90px auto;
+    width: 1000px;
+    text-align: center;
+}
+
+.qm p{font-size: 40px;color: #c81b10}
+
+.qm img{
+    width: 400px;
+}

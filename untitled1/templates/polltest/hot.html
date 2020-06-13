@@ -1,0 +1,107 @@
+{% extends 'polltest/base.html' %}
+
+{% load static from staticfiles%}
+
+{% block title %}<title>热门电影在线播放</title>{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polltest/css/hot.css' %}">
+{% endblock %}
+
+{% block base %}
+<div class="context clearfix">
+<div class="left_list clearfix">
+    <div class="left_list_head clearfix">
+        <p class="one">您现在所在的位置：杰士凡影视&raquo;热门影片</p>
+        <p class="two">影片列表</p>
+    </div>
+    <div class="tv_list clearfix">
+         <ul class="con_tv_ul  clearfix">
+              {% for foo in  context%}
+                  {% if forloop.counter == 1 %}
+                       {% for f in foo %}
+                          <li>
+                            <div class="con_tv_con">
+                            <div class="a-img" >
+                                <a class="con_tv_a" href="/movie/MovieAction/{{ f.id }}" target="_blank">
+                                    <img src="{{ f.imgurl }}">
+                                    <span class="con_tv_span">{{ f.noe }}</span>
+                                </a>
+                            </div>
+                            <p>名字：{{ f.tv_name }}</p>
+                            {% if f.language %}
+                            <p>语言：{{ f.language }}</p>
+                            {% else %}
+                            <p>语言：未知</p>
+                            {% endif %}
+                            </div>
+                          </li>
+                       {% endfor %}
+                  {% elif forloop.counter == 2 %}
+                       {% for f in foo %}
+                          <li>
+                            <div class="con_tv_con">
+                            <div class="a-img" >
+                                <a class="con_tv_a" href="/teleplay/TvMLS/{{ f.id }}" target="_blank">
+                                    <img src="{{ f.imgurl }}">
+                                    <span class="con_tv_span">{{ f.noe }}</span>
+                                </a>
+                            </div>
+                            <p>名字：{{ f.tv_name }}</p>
+                            {% if f.language %}
+                            <p>语言：{{ f.language }}</p>
+                            {% else %}
+                            <p>语言：未知</p>
+                            {% endif %}
+                            </div>
+                          </li>
+                       {% endfor %}
+                  {% elif forloop.counter == 3 %}
+                          {% for f in foo %}
+                          <li>
+                            <div class="con_tv_con">
+                            <div class="a-img" >
+                                <a class="con_tv_a" href="/comic/ComicJSK/{{ f.id }}" target="_blank">
+                                    <img src="{{ f.imgurl }}">
+                                    <span class="con_tv_span">{{ f.noe }}</span>
+                                </a>
+                            </div>
+                            <p>名字：{{ f.tv_name }}</p>
+                            {% if f.language %}
+                            <p>语言：{{ f.language }}</p>
+                            {% else %}
+                            <p>语言：未知</p>
+                            {% endif %}
+                            </div>
+                          </li>
+                       {% endfor %}
+                  {% else %}
+                           {% for f in foo %}
+                          <li>
+                            <div class="con_tv_con">
+                            <div class="a-img" >
+                                <a class="con_tv_a" href="/VarietyShow/{{ f.id }}" target="_blank">
+                                    <img src="{{ f.imgurl }}">
+                                    <span class="con_tv_span">{{ f.noe }}</span>
+                                </a>
+                            </div>
+                            <p>名字：{{ f.tv_name }}</p>
+                            {% if f.language %}
+                            <p>语言：{{ f.language }}</p>
+                            {% else %}
+                            <p>语言：未知</p>
+                            {% endif %}
+                            </div>
+                          </li>
+                       {% endfor %}
+                  {% endif %}
+              {% endfor %}
+         </ul>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block script %} {% endblock %}
+
+

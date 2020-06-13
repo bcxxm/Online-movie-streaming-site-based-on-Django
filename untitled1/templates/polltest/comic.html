@@ -1,0 +1,161 @@
+{% extends 'polltest/base.html' %}
+
+{% block title %} <title>动漫在线播放，最新动漫连载</title> {% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/polltest/css/movie.css">
+{% endblock %}
+
+{% block base %}
+<div class="gmovie clearfix">
+    <!--类型搜索-->
+    <div class="gmovie_search_div">
+        <div class="type_search clearfix">
+            <h5>类型</h5>
+            <ul>
+                <li><a href="ComicML/">国产动漫</a></li>
+                <li><a href="ComicJSK/">日韩动漫</a></li>
+                <li><a href="ComicOther/">欧美动漫</a></li>
+            </ul>
+        </div>
+        <div class="star_search clearfix">
+            <h5>声优热搜</h5>
+            <ul>
+                <li><a href="/search/神谷浩史">神谷浩史</a></li>
+                <li><a href="/search/花泽香菜">花泽香菜</a></li>
+                <li><a href="/search/钉宫理惠">钉宫理惠</a></li>
+                <li><a href="/search/小野大辅">小野大辅</a></li>
+                <li><a href="/search/水濑祈">水濑祈</a></li>
+                <li><a href="/search/宫野真守">宫野真守</a></li>
+                <li><a href="/search/平野绫">平野绫</a></li>
+                <li><a href="/search/柿原彻也">柿原彻也</a></li>
+                <li><a href="/search/ 石田彰"> 石田彰</a></li>
+                <li><a href="/search/坂本真绫">坂本真绫</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--国产动漫-->
+    <div class="dz_movie gmovie_con clearfix">
+        <div class="dz_movie_head gmovie_con_head clearfix">
+            <h3>国产动漫</h3>
+            <a href="ComicML/">更多</a>
+        </div>
+        <div class="dz_movie_content gmovie_con_content">
+            <ul class="con_tv_ul  clearfix">
+                {% for foo in  ml %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="ComicML/{{ foo.id }}" target="_blank">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--右边列表1-->
+    <div class="hot_play gmovie_right clearfix">
+        <div class="teleplay_right_head clearfix">
+            <h4>动漫热播榜</h4>
+        </div>
+        <div class="teleplay_right_ul clearfix">
+              <ul class="pf_ul">
+                {% for foo in rankhot %}
+                <li>
+                    <div class="pf_right_li_con">
+                       {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="/search/{{ foo.tv_name }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat }}分</span>
+                    </div>
+                </li>
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    <!--空块-->
+    <div class="empty_div"></div>
+    <!--日韩动漫-->
+    <div class="happy_movie gmovie_con clearfix">
+        <div class="gan_tai_teleplay_head gmovie_con_head clearfix">
+            <h3>日韩动漫</h3>
+            <a href="ComicJSK/">更多</a>
+        </div>
+        <div class="gan_tai_teleplay_content gmovie_con_content">
+             <ul class="con_tv_ul  clearfix">
+                {% for foo in  jsk %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="ComicJSK/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--右边列表2-->
+    <div class="newMovieList gmovie_right clearfix">
+        <div class="teleplay_right_head clearfix">
+            <!--<img src="img/123.jpg">-->
+            <h4>最新动漫</h4>
+        </div>
+        <div class="teleplay_right_ul clearfix">
+             <ul class="pf_ul">
+                {% for foo in ranknew %}
+                <li>
+                    <div class="pf_right_li_con">
+                       {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="/search/{{ foo.tv_name }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat }}分</span>
+                    </div>
+                </li>
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    <!--欧美动漫-->
+    <div class="science_movie gmovie_con clearfix">
+        <div class="science_movie_head gmovie_con_head clearfix">
+            <h3>欧美动漫</h3>
+            <a href="ComicOther/">更多</a>
+        </div>
+        <div class="science_movie_content gmovie_con_content">
+           <ul class="con_tv_ul  clearfix">
+                {% for foo in  other %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="ComicOther/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

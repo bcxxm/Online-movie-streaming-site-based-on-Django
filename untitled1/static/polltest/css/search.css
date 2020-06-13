@@ -1,0 +1,117 @@
+
+.result{
+    width: 1000px;
+    margin:8px auto;
+    border: 1px solid #dedede;
+    overflow: hidden;
+}
+
+.noFinding{
+    width: 460px;
+    /*height: 1000px;*/
+    padding: 10px;
+    margin: auto auto;
+    overflow: hidden;
+}
+
+.noFinding image{
+    float: left;
+    display: block;
+    margin-top: 4px;
+    width: 200px;
+    height: 400px;
+}
+
+.noFinding p{
+    float: left;
+    font-size: 30px;
+    /*width: 50px;*/
+}
+
+.messages{
+    float: left;
+    width: 470px;
+    height: 210px;
+    /*margin:8px;*/
+    padding: 8px;
+    border-bottom: 1px solid #dedede;
+    overflow: hidden;
+}
+
+.messages .left_img{
+    display: block;
+    float: left;
+    border: 1px solid #dedede;
+    background-color: #7d7d7d;
+    padding: 4px;
+    width: 160px;
+    height: 200px;
+}
+
+.messages .left_img:hover{
+    float: left;
+    border: 2px solid #c81b10
+}
+
+.messages .left_img img{
+    display: block;
+    width: 160px;
+    height: 200px;
+}
+
+.messages .right_message{
+    float: left;
+    margin: 0px 14px;
+    width: 260px;
+}
+
+.right_message p{
+    height: 24px;
+    overflow: hidden;
+}
+
+.right_message .detail_intro a{
+   text-decoration: none;
+    color: #c81b10;
+}
+
+/*分页导航开始*/
+.step-links{margin-top: 15px}
+.step-links a{
+    display:inline-block;
+    border: 1px solid #dedede;
+    padding: 6px 10px;
+    font-size: 15px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    }
+     /*.step-links a:link{background-color:#dedede}*/
+     .step-links a:hover{background-color:#18c2c8;}
+     .step-links a:active{background-color: #E12F02;}
+    ul{}
+    li{list-style:none;}
+    .pageAll{overflow:hidden;width: 720px;height: 35px;border: 1px solid #dedede;padding: 8px 6px;}
+    .pageAll div{float: left}
+    .pageNum .active{
+        background-color: #18c2c8;
+        display:inline-block;
+        border: 1px solid #dedede;
+        padding: 6px 10px;
+        font-size: 15px;
+        }
+    .pageAll .pageEnd{display: inline}
+    .pageAll .pageEnd span{
+        display: inline-block;
+         border: 1px solid #dedede;
+        padding: 6px 10px;
+        font-size: 15px;
+    }
+    .pagePre{margin-left: 230px}
+    .pageNum{margin:0px 10px;}
+    .current{width: 1500px;overflow: hidden}
+    .current div{float: left;width: 25%;overflow: hidden;margin: 5px}
+    .current img{float: left;width: 150px;height: 200px}
+    .current li{float: left;width: 200px;overflow: hidden;margin-left: 5px;}
+    .current li p{overflow: hidden;margin: 10px;height: 20px}
+
+

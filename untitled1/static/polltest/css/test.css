@@ -1,0 +1,39 @@
+
+body{width: 80%;height:100%;margin: 0 auto}
+
+p{text-align: left}
+
+/*标题开始*/
+/*.d-h1{width: 96.5%;}*/
+
+h1{ text-align: center;margin-bottom: 0px;width: 96%;
+    padding-bottom: 0px;border-style: inset inset outset inset;
+    border-color: aqua;background-color: grey}
+
+/*个人信息开始*/
+.h-self{height:100%;width:92%;display: inline-block;
+        padding-bottom: 0px;margin-bottom: 0px;
+        border-style: none inset outset inset;padding-left:4%;}
+
+img{width:180px;height:220px;}
+
+.personage-information{margin-left: 20px;margin-right: 20px;float: left;}
+
+/*工作经历开始*/
+.contain{height:100%;width: 96%;border-style:none inset outset inset;
+         margin-top: 0px;padding-top: 0px;}
+
+.container{margin-left: 6.5%}
+
+.profession-career{border-bottom-style: groove;}
+
+.profession-career-type{width: 100px;background-color: rgba(0,0,0,0.82);
+                        color: #ffffff;text-align: center;margin-bottom: 0%}
+
+.profession-career-type-intro{margin-left: 2%;text-align: justify}
+
+#p1:after{content: "周慧敏（Vivian Chow），1967年11月10日生于香港，中国香港女歌手、演员。 1988年，加入TVB当劲歌金曲主持，演出首部电影《三人世界》。 1991年，辞退电台工作，全线向歌唱和演戏发展。 1993年，以电视剧《大时代》获壹电视大奖最受欢迎艺人第三位。 2011年，在香港体育馆举办两场演唱会，以庆祝入行25周年纪念及推出25周年纪念EP《盆栽》。";}
+
+#p2:after{content: "1989年获得香港电台十大中文金曲最有前途新人奖优异奖，并主持香港电台电视部年轻人时事节目《摩登时代》,1990年出演首部电视剧《乌金血剑》，饰演女主角唐剑儿， 同年推出首张专辑 同年成为台湾福茂唱片新人，成功开拓台湾市场，首张国语唱片流言总销量冲破30万张。被封为“玉女掌门人”。 1994年广东唱片与国语唱片销量冲破八白金，在台湾举行4场巡回演唱会，举行4场香港“周慧敏美的化身94”演唱会。 4月拍摄一个MTV，以一袭性感宫廷装亮相。1997年尾周慧敏淡出娱乐圈，与老公倪震移民温哥华。偶尔出席公众场合。 2004年推出新书《我的猫儿子周慧豹》在香港热卖。周慧敏也是香港美式台球协会会员，曾经代表出赛夺取女子组第三名。"}
+
+#p3:after{content: "真经典-周慧敏：最爱；孤单的心痛；真爱在明天；会错意；知己；痴心换情深；流言； 如果你知我苦衷；自作多情；天荒爱未老；万千宠爱在一身；感情的分礼；男女之间； 男人心；情未了；红叶落索的时候;曲目  · · · · · ·"}

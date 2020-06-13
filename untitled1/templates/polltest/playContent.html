@@ -1,0 +1,121 @@
+{% extends 'polltest/base.html' %}
+{% load static %}
+{% block title %}<title>{{ context.first.feilei }}在线观看</title> {% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polltest/css/playContent.css' %}">
+{% endblock %}
+{% block base %}
+    <div class="play_content">
+        <div class="messages">
+            <div class="left_img">
+                <img src="{{context.first.imgurl}}">
+            </div>
+            <div class="right_message">
+                <h2 class="name">{{ context.first.tv_name }}</h2>
+                <div class="intro-top">
+                <div class="star">
+                    <span>主演：</span>
+                        {% for starname in starNames %}
+                            <a href="/search/{{ starname }}">{{ starname }}</a>
+                        {% endfor %}
+                </div>
+                    <p>状态：{{ context.first.noe }}</p>
+                    <p >
+                        <span>类型：{{ context.first.tv_type }}</span>
+                        <span>更新时间：{{ context.first.time }}</span>
+                    </p>
+                    <p>
+                        <span>语言：{{ context.first.language }}</span>
+                        <span>导演：{{ context.first.director }}</span>
+                    </p>
+                </div>
+                <div class="intro-bottom">
+                    <p>剧情：{{ context.first.intro }}</p>
+                    <span>.........</span><a href="#detail-intro">详细剧情》</a>
+                </div>
+            </div>
+        </div>
+        <div class="play_url">
+       {% if tap %}
+            {% if big %}
+                <p>在线源一, 无需安装任何播放器或插件，就可快速在线播放</p>
+                <a href="/play/{{ big }}/{{ type }}/{{ num }}/play.html?value={{ num }}-0" target="_blank">
+                    {{ context.first.noe }}
+                </a>
+                <p>在线源二, 无需安装任何播放器或插件，就可快速在线播放</p>
+                  <a href="/play/{{ big }}/{{ type }}/{{ num }}/play.html?value={{ num }}-1" target="_blank">
+                    {{ context.first.noe }}
+                </a>
+             {% else %}
+               <p>在线源一, 无需安装任何播放器或插件，就可快速在线播放</p>
+                <a href="/play/{{ type }}/{{ num }}/play.html?value={{ num }}-0" target="_blank">
+                    {{ context.first.noe }}
+                </a>
+                <p>在线源二, 无需安装任何播放器或插件，就可快速在线播放</p>
+                  <a href="/play/{{ type }}/{{ num }}/play.html?value={{ num }}-1" target="_blank">
+                    {{ context.first.noe }}
+                </a>
+            {% endif %}
+        {% else %}
+            {% if big %}
+                <p>在线源一, 无需安装任何播放器或插件，就可快速在线播放</p>
+                {% for foo in cont %}
+                    <a href="/play/{{ big }}/{{ type }}/{{ num }}/play.html?value={{ num }}-0-{{ forloop.counter }}" target="_blank">
+                        {{ foo.one_set }}
+                    </a>
+                {% endfor %}
+                <p>在线源二, 无需安装任何播放器或插件，就可快速在线播放</p>
+                {% for foo in cont %}
+                    <a href="/play/{{ big }}/{{ type }}/{{ num }}/play.html?value={{ num }}-1-{{ forloop.counter }}" target="_blank">
+                        {{ foo.one_set }}
+                    </a>
+                {% endfor %}
+             {% else %}
+                <p>在线源一, 无需安装任何播放器或插件，就可快速在线播放</p>
+                {% for foo in cont %}
+                    <a href="/play/{{ type }}/{{ num }}/play.html?value={{ num }}-0-{{ forloop.counter }}" target="_blank">{{ foo.one_set }}</a>
+                {% endfor %}
+                <p>在线源二, 无需安装任何播放器或插件，就可快速在线播放</p>
+                {% for foo in cont %}
+                    <a href="/play/{{ type }}/{{ num }}/play.html?value={{ num }}-1-{{ forloop.counter }}" target="_blank">{{ foo.one_set }}</a>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        </div>
+        <div class="tv_details" id="detail-intro">
+            <p>《<span style="color: #E12F02">{{ context.first.tv_name }}</span>》详细剧情：{{ context.first.intro }}</p>
+            <p style="color: #E12F02">我们一直用心努力，你的满意是我们的追求！</p>
+            <p style="color: #E12F02">希望您能记住我们的网址www.abc.com</p>
+        </div>
+        <div class="play_recommend">
+            <p>除了"<span style="color: #E12F02">{{ context.first.tv_name }}</span>"你也可能喜欢以下影片：</p>
+            <div class="likeList">
+                <ul>
+                {% if big %}
+                    {% for foo in context %}
+                    {% if forloop.counter >= 16 %}
+                    <li>
+                        <a href="/{{ big }}/{{ type }}/{{ foo.id }}/" target="_blank">
+                            <img src="{{ foo.imgurl }}" alt="图片失效">
+                        </a>
+                        <p>{{ foo.tv_name }}</p>
+                    </li>
+                     {% endif %}
+                     {% endfor %}
+                {% else %}
+                    {% for foo in context %}
+                    {% if forloop.counter >= 16 %}
+                    <li>
+                        <a href="/{{ type }}/{{ foo.id }}/" target="_blank">
+                            <img src="{{ foo.imgurl }}" alt="图片失效">
+                        </a>
+                        <p>{{ foo.tv_name }}</p>
+                    </li>
+                     {% endif %}
+                     {% endfor %}
+                {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

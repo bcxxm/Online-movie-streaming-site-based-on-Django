@@ -1,0 +1,392 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0}
+body{margin: 0 auto}
+.all_content{width: 1000px;margin: 0 auto;}
+
+/*右边排行榜列表*/
+.pf_ul{
+    margin-top:3px;
+    padding:3px;
+}
+
+/*影视块共同属性*/
+.leixing{
+    width: 1000px;
+    /*height: 560px;*/
+    margin:4px auto;
+    border: 1px solid #dedede;
+    background:#FFFFFF;
+    /*margin-top: 8px;*/
+}
+/*轮番图片开始*/
+#focus_Box a,img{border:0;}
+/*body{font:12px/180% Arial, Helvetica, sans-serif,"新宋体";}*/
+/* focus_Box */
+#focus_Box{position:relative;width:1000px;height:355px;margin-top: 8px; border: 1px solid #dedede;overflow: hidden;}
+#focus_Box .focus_ul{position:relative;width:710px;height:308px;margin-top: 5px;margin-left: 4px}
+#focus_Box .focus_ul li{list-style: none;z-index:0;position:absolute; width:0px;background:#787878;height:0px;top:146px;cursor:pointer;left:377px;border-radius:4px;box-shadow:1px 1px 12px rgba(200, 200, 200, 1)}
+#focus_Box .focus_ul img{width:100%;background:url(../img/loading.gif) no-repeat center 50%;height:100%;vertical-align:top}
+#focus_Box .focus_ul li p{position:absolute;left:0;bottom:0px;width:100%;height:40px;line-height:40px;background:url(../img/float-bg.png) repeat;text-indent:8px;color:#fff;}
+#focus_Box .focus_ul li p span{display:inline-block;width:70%;height:40px;overflow:hidden;}
+#focus_Box .prev,#focus_Box .next{display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:52px;height:52px;top:131px;}
+#focus_Box .prev{background:url(../img/btn.png) left bottom no-repeat;left:0px}
+#focus_Box .next{background:url(../img/btn.png) right bottom no-repeat;right:0px}
+#focus_Box .prev:hover{background-position:left top;}
+#focus_Box .next:hover{background-position:right top;}
+/*小圆点*/
+#list{
+    list-style: none;
+    position: absolute;
+    bottom: 5px;
+    left: 420px;
+}
+
+#list li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background: #aaa;
+    margin-right: 10px;
+}
+
+/*电视剧开始*/
+
+/*电视剧块左边*/
+.teleplay_left{
+    width: 74%;
+    padding: 8px;
+    /*margin-left: 5px;*/
+    /*width: 750px;*/
+    /*margin-right: 20px;*/
+    float: left;
+}
+/*电视剧左边头部*/
+.teleplay_left_head{
+    width:99.5%;
+
+}
+
+.teleplay_left_head h2{
+    float: left;
+    display: block;
+    margin-top: 2px;
+    font-size: 25px;
+    margin-left: 15px;
+    /*overflow: hidden;*/
+}
+
+.teleplay_left_head h2 a{text-decoration: none}
+
+.teleplay_left_head h2 em{font-size: 18px}
+
+.teleplay_left_head ul{
+    float: right;
+    margin-top: 10px;
+    border-bottom: 1px solid #e12160;
+}
+
+.teleplay_left_head ul li{
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.teleplay_left_head  ul .active{
+    color: #fff;
+    font-weight: bold;
+    background: #e12160;
+}
+
+/*电视剧左边下面内容开始*/
+.teleplay_left_content{
+    margin-top: 10px;
+    width: 100%;
+    /*margin-left: 15px;*/
+}
+
+.con_tv{
+    width: 100%;
+}
+.con_tv_1_left{
+    float: left;
+    width: 35%;
+    height: 500px;
+    margin-left: 15px;
+}
+
+.con_tv_1_right{
+    float: right;
+    width: 60%;
+    margin-left: 20px;
+}
+
+.con_tv_1_left_top{
+    width: 240px;
+    height: 300px;
+    /*margin-top: 8px*/
+}
+
+.con_tv_1_left_top_a{
+    display: block;
+    width: 220px;
+    height: 250px;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+.con_tv_1_left_top_a img{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    z-index: 0;
+}
+
+.con_tv_1_left_top_a:hover{
+    border: 1px solid #E12F02;
+}
+.con_tv_1_left_top_a:active{ border: 1px solid #0000FF;}
+
+
+.con_tv_1_left_top_a span{
+    display: block;
+    position: absolute;
+    bottom: 6px;
+    right: 1.5%;
+    /*background-color: #ffffff;*/
+    /*background-position-x: 200px;*/
+    z-index: 300;
+}
+
+.con_tv_1_left li{
+    list-style: none;
+    text-align: left;
+}
+
+.con_tv_1_left_bottom{
+    width: 100%;
+    height: 220px;
+    margin-top: 70px
+}
+
+.con_tv_1_left_bottom li{
+    margin-top: 2px;
+}
+
+.con_tv_1_left_bottom a{
+    font-size: 13px;
+    text-decoration: none;
+}
+.con_tv_1_left_bottom .gen_xin{
+    font-size: 13px;
+    padding-left:5px;
+    color:green;
+}
+
+.con_tv_1_left_bottom .hot_du{
+    float:right;
+    color:#C06;
+    font-size: 13px;
+}
+
+.con_tv_1_right_con{
+    /*margin-top: 8px;*/
+}
+
+.con_tv_1_right ul li{
+    list-style:none;
+    width: 118px;
+    height: 240px;
+    padding: 0 15px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    /*padding: 0 6px;*/
+}
+
+.con_tv_1_right_con div{
+    width: 100%;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.con_tv_1_right_con div a{
+    margin: 0 auto;
+    width: 118px;
+    height: 158px;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-decoration: none;
+    background: #fff;
+    position: relative;
+    /*transition: all 0.6s;*/
+}
+
+.con_tv_1_right_con div a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.con_tv_1_right_con p{
+    width: 118px;
+    height: 18px;
+    line-height: 18px;
+    text-align: left;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+/*电视剧右边开始*/
+.teleplay_right{
+   margin-right: 15px;
+    width: 23%;
+}
+
+.con_tv_ul li {
+    list-style:none;
+    width: 118px;
+    height: 240px;
+    padding: 0 15px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+
+.con_tv_con div a{
+    margin: 0 auto;
+    width: 118px;
+    height: 158px;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-decoration: none;
+    background: #fff;
+    position: relative;
+    /*transition: all 0.6s;*/
+}
+
+.con_tv_con div a img{
+    display: block;
+    width: 118px;
+    height: 158px;
+
+}
+
+.con_tv_con p{
+    width: 118px;
+    height: 18px;
+    line-height: 18px;
+    text-align: left;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.tw:hover{
+    border: 1px solid #E12F02;
+    /*transform: scale(1.05)*/
+}
+.tw:active{ border: 1px solid #0000FF;}
+
+.snum{
+    position: absolute;
+    bottom: 5px;
+    right:1.5%;
+    background-color: white
+}
+
+.teleplay_right{
+    width: 22%;
+    float: right;
+    margin-top: 10px;
+}
+
+.teleplay_right_head {
+    height: 25px;
+    /*width: 190px;*/
+    border-bottom: 1px solid #dedede;
+    /*margin-top:6px;*/
+    /*vertical-align: center;*/
+}
+
+.teleplay_right_head img{
+    float: left;
+    display: block;
+    width: 28px;
+    height: 22px;
+}
+
+.teleplay_right_head h4{
+    float: left;
+    /*border-left: 8px solid #0000FF;*/
+    font-size: 15px;
+    margin-left: 5px;
+    margin-top: 1%;
+}
+
+.teleplay_right_head a {
+    float: right;
+    display: block;
+    font: 14px "Microsoft YaHei";
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.teleplay_right_ul{
+    /*margin-top: 3px;*/
+}
+
+.teleplay_right_ul ul li {
+    border-bottom:1px solid #dedede;
+    width: 100%;
+    height:30px;
+    overflow: hidden;
+    list-style:none;
+}
+
+.pf_right_li_con{
+    vertical-align: center;
+    width: 100%;
+    padding-top: 4px;
+}
+.pf_right_li_con a{
+    float: left;
+    margin-left: 6px;
+    width: 150px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.pf_right_li_con a:visited{color: #666666}
+.pf_right_li_con a:link{color: black}
+.pf_right_li_con a:hover{color:#E12F02;text-decoration:underline;}
+.pf_right_li_con a:active{color: #0000FF;}
+
+.pf_right_li_con .num{
+    float: left;
+    display: inline-block;
+    padding: 1px;
+    margin-top: 1px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background-color: #fb4e26;
+    vertical-align: middle;
+}
+
+.pf_right_li_con .pf{
+    float: right;
+    font-size: 15px
+}
+
+/*清除浮动*/
+.clearfix:after {content: "";display: table;clear: both;visibility: hidden;height: 0;font-size:0;}
+.clearfix:before{content: "";display: table;clear: both;}
+.clearfix{*zoom:1;}

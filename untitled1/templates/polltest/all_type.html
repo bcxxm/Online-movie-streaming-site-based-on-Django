@@ -1,0 +1,139 @@
+{% extends 'polltest/base.html' %}
+
+{% load static from staticfiles%}
+
+{% block title %} <title>杰士凡影视/{{ big_type }}/{{ verbose_name }}</title> {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polltest/css/alltype.css' %}">
+{% endblock %}
+
+{% block base %}
+<div class="context clearfix">
+<div class="left_list clearfix">
+    <div class="left_list_head clearfix">
+        <p class="one">您现在所在的位置：杰士凡影视&raquo;{{ big_type }}&raquo;{{ verbose_name }}</p>
+        <p class="two">影片列表</p>
+    </div>
+    <div class="tv_list clearfix">
+         <ul class="con_tv_ul  clearfix">
+              {% for foo in  context.object_list %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="{{ foo.id }}/" target="_blank">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        {% if foo.language %}
+                        <p>语言：{{ foo.language }}</p>
+                        {% else %}
+                        <p>语言：未知</p>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+         </ul>
+    </div>
+    <div class="step-links">
+        <div class="pageAll">
+        <div class="pagePre">
+        {% if context.has_previous %}
+            <a href="?page=1">&laquo; 首页</a>
+            <a href="?page={{ context.previous_page_number }}">上一页</a>
+            {% else %}
+             <div class="pageEnd">
+                 <span>&laquo; 首页</span>
+                 <span>上一页</span>
+             </div>
+        {% endif %}
+        </div>
+        <div class="pageNum">
+           {% for num in leftpage %}
+               {% if context.number == num %}
+                   <span class="active" href="?page={{ context.number }}">{{ context.number }}</span>
+                {% else %}
+                   <a href="?page={{ num }}">{{ num }}</a>
+               {% endif %}
+           {% endfor %}
+           {% if context.number < context.paginator.num_pages %}
+           {% for num in rightpage %}
+               {% if context.number == num %}
+                   <span class="active" href="?page={{ context.number }}">{{ context.number }}</span>
+               {% else %}
+                   <a href="?page={{ num }}">{{ num }}</a>
+               {% endif %}
+           {% endfor %}
+           {% else %}
+                    <span class="active" href="?page={{ context.number }}">{{ context.number }}</span>
+           {% endif %}
+
+        </div>
+        <div class="pageNext">
+        {% if context.has_next %}
+            <a href="?page={{ context.next_page_number }}">下一页</a>
+            <a href="?page={{ context.paginator.num_pages }}">尾页 &raquo;</a>
+        {% else %}
+            <div class="pageEnd">
+                <span>下一页</span>
+                <span>尾页 &raquo;</span>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
+</div>
+<div class="right_list clearfix">
+    <div class="right_list_head  clearfix">
+            <!--<img src="img/123.jpg">-->
+            <h4>2019热搜榜</h4>
+        </div>
+    <div class="right_list_ul clearfix">
+             <ul class="pf_ul">
+                {% for foo in rank %}
+{#                    {% if forloop.counter <= 15 %}#}
+                <li>
+                    <div class="pf_right_li_con">
+                        {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="{{ foo.id }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat:1 }}</span>
+                    </div>
+                </li>
+{#                    {% endif %}#}
+                {% endfor %}
+             </ul>
+     </div>
+{#    <div class="empty_div"></div>#}
+    <div class="right_list_head clearfix">
+            <!--<img src="img/123.jpg">-->
+            <h4>2019热播榜</h4>
+        </div>
+    <div class="right_list_ul clearfix">
+             <ul class="pf_ul">
+                {% for foo in rank %}
+{#                    {% if  forloop.counter <= 15 %}#}
+                <li>
+                    <div class="pf_right_li_con">
+                        {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="{{ foo.id }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat:1 }}</span>
+                    </div>
+                </li>
+{#                     {% endif %}#}
+                {% endfor %}
+             </ul>
+     </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,242 @@
+{% extends 'polltest/base.html' %}
+
+{% block title %} <title>电视剧在线播放，最新电视剧</title> {% endblock %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="/static/polltest/css/movie.css">
+{% endblock %}
+
+{% block base %}
+<div class="gmovie clearfix">
+    <!--类型搜索-->
+    <div class="gmovie_search_div">
+        <div class="type_search clearfix">
+            <h5>类型</h5>
+            <ul>
+                <li><a href="TvMLS/">大陆剧</a></li>
+                <li><a href="TvHKT/">港台剧</a></li>
+                <li><a href="TvEA/">欧美剧</a></li>
+                <li><a href="TvJSK/">日韩剧</a></li>
+                <li><a href="TvOverSeas/">海外剧</a></li>
+            </ul>
+        </div>
+        <div class="star_search clearfix">
+            <h5>明星热搜</h5>
+            <ul>
+                <li><a href="/search/杨幂">杨幂</a></li>
+                <li><a href="/search/赵丽颖">赵丽颖</a></li>
+                <li><a href="/search/郑爽">郑爽</a></li>
+                 <li><a href="/search/孙俪">孙俪</a></li>
+                <li><a href="/search/林心如">林心如</a></li>
+                <li><a href="/search/李易峰">李易峰</a></li>
+                <li><a href="/search/钟汉良">钟汉良</a></li>
+                <li><a href="/search/彭于晏">彭于晏</a></li>
+                <li><a href="/search/胡歌">胡歌</a></li>
+                <li><a href="/search/孙红雷">孙红雷</a></li>
+                <li><a href="/search/唐国强">唐国强</a></li>
+                <li><a href="/search/刘劲">刘劲</a></li>
+                <li><a href="/search/胡军">胡军</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--大陆剧-->
+    <div class="dz_movie gmovie_con clearfix">
+        <div class="dz_movie_head gmovie_con_head clearfix">
+            <h3>大陆剧</h3>
+            <a href="TvMLS/">更多</a>
+        </div>
+        <div class="dz_movie_content gmovie_con_content">
+            <ul class="con_tv_ul  clearfix">
+                {% for foo in  mls %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="TvMLS/{{ foo.id }}" target="_blank">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--右边列表1-->
+    <div class="hot_play gmovie_right clearfix">
+        <div class="teleplay_right_head clearfix">
+            <h4>电视剧热播榜</h4>
+        </div>
+        <div class="teleplay_right_ul clearfix">
+             <ul class="pf_ul">
+                {% for foo in rankhot %}
+                <li>
+                    <div class="pf_right_li_con">
+                       {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="/search/{{ foo.tv_name }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat }}分</span>
+                    </div>
+                </li>
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    <!--空块-->
+    <div class="empty_div"></div>
+    <!--港台剧-->
+    <div class="happy_movie gmovie_con clearfix">
+        <div class="gan_tai_teleplay_head gmovie_con_head clearfix">
+            <h3>港台剧</h3>
+            <a href="TvHKT/">更多</a>
+        </div>
+        <div class="gan_tai_teleplay_content gmovie_con_content">
+             <ul class="con_tv_ul  clearfix">
+                {% for foo in  hsk %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="TvHKT/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--右边列表2-->
+    <div class="newMovieList gmovie_right clearfix">
+        <div class="teleplay_right_head clearfix">
+            <!--<img src="img/123.jpg">-->
+            <h4>最新电视剧</h4>
+        </div>
+        <div class="teleplay_right_ul clearfix">
+            <ul class="pf_ul">
+                {% for foo in ranknew %}
+                <li>
+                    <div class="pf_right_li_con">
+                       {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="/search/{{ foo.tv_name }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat }}分</span>
+                    </div>
+                </li>
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    <!--欧美剧-->
+    <div class="science_movie gmovie_con clearfix">
+        <div class="science_movie_head gmovie_con_head clearfix">
+            <h3>欧美剧</h3>
+            <a href="TvEA/">更多</a>
+        </div>
+        <div class="science_movie_content gmovie_con_content">
+           <ul class="con_tv_ul  clearfix">
+                {% for foo in  ea %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="TvEA/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--空块-->
+    <div class="empty_div"></div>
+    <!--日韩剧-->
+    <div class="war_movie gmovie_con clearfix">
+        <div class="war_movie_head gmovie_con_head clearfix">
+            <h3>日韩剧</h3>
+            <a href="TvJSK/">更多</a>
+        </div>
+        <div class="war_movie_content gmovie_con_content">
+            <ul class="con_tv_ul  clearfix">
+                {% for foo in  jsk %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="TvJSK/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--右边列表3-->
+    <div class="hotSearch gmovie_right clearfix">
+        <div class="teleplay_right_head clearfix">
+            <!--<img src="img/123.jpg">-->
+            <h4>电视剧热搜榜</h4>
+        </div>
+        <div class="teleplay_right_ul clearfix">
+           <ul class="pf_ul">
+                {% for foo in ranksearch %}
+                <li>
+                    <div class="pf_right_li_con">
+                       {% if forloop.counter < 10 %}
+                        <span class="num">0{{ forloop.counter}}</span>
+                        {% else %}
+                        <span class="num">{{ forloop.counter}}</span>
+                        {% endif %}
+                        <a href="/search/{{ foo.tv_name }}">{{ foo.tv_name }}</a>
+                        <span class="pf">{{ foo.pf | floatformat }}分</span>
+                    </div>
+                </li>
+                {% endfor %}
+             </ul>
+        </div>
+    </div>
+    <!--海外剧-->
+    <div class="kongBu_movie gmovie_con clearfix">
+        <div class="kongBu_movie_head gmovie_con_head clearfix">
+            <h3>海外剧</h3>
+            <a href="TvOverSeas/">更多</a>
+        </div>
+        <div class="kongBu_movie_content gmovie_con_content">
+            <ul class="con_tv_ul  clearfix">
+                {% for foo in  overseas %}
+                <li>
+                    <div class="con_tv_con">
+                        <div class="a-img" >
+                            <a class="con_tv_a" href="TvOverSeas/{{ foo.id }}">
+                                <img src="{{ foo.imgurl }}">
+                                <span class="con_tv_span">{{ foo.noe }}</span>
+                            </a>
+                        </div>
+                        <p>名字：{{ foo.tv_name }}</p>
+                        <p>语言：{{ foo.language }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,278 @@
+*{margin: 0;padding: 0}
+input{outline: none}
+.tatol{ margin: 0 auto;padding: 0;text-align: center;width: 1000px;
+;}
+.item-header{
+    border: 1px solid #dedede;
+}
+.dy{height: 570px;margin-top: 6px;
+    border: 1px solid #dedede;}
+.dy div{float: left}
+.pf_ul{
+    margin-top:3px;
+    padding:3px;
+}
+.middle-left{
+           width:75%;
+          margin-left:4px;
+          padding: 6px;
+}
+.middle-right{width: 20%;
+    margin-top: 4px;
+    padding: 2px;
+   }
+.dianying .right-ul li {
+        border-top:1px solid #dedede;
+         height:30px;
+          overflow: hidden;
+          list-style:none;
+    
+          /*padding-top: 3px*/
+}
+.dy-alt {height: 25px;
+         width: 190px;
+        margin-top:6px;
+        vertical-align: center;
+        }
+.dy-alt img{float: left;display: block;width: 30px;height: 30px;border-bottom: 4px;}
+.dy-alt h4{float: left;
+    /*border-left: 8px solid #0000FF;*/
+    margin-left: 3px;
+    }
+.dy-alt a{float: right;
+        display:inline-block;
+        font:16px "Microsoft YaHei";
+        text-decoration: none;
+        overflow: hidden;
+        }
+.right-ul{
+    margin-top: 3px;
+}
+.con-right{
+           vertical-align: center;
+           width: 180px;
+           padding-top: 4px;
+           }
+.con-right a{float: left;
+    margin-left: 6px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.con-right a:visited{color: #666666}
+.con-right a:link{color: black}
+.con-right a:hover{color:#E12F02;text-decoration:underline;}
+.con-right a:active{color: #0000FF;}
+.con-right .num{
+    float: left;
+    display: inline-block;
+    padding: 1px;
+    margin-top: 1px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background-color: #fb4e26;
+    vertical-align: middle;
+}
+.con-right .pf{float: right;font-size: 15px}
+.contentul{}
+.contentul li{list-style:none;
+    width: 18.5%;float: left;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 8px}
+.con{margin-top: 8px;}
+.a-img img{width: 100%;
+    height: 100%;
+}
+.a-img{width: 100%;
+    margin-bottom: 3px;
+   text-align: center;}
+.con p{text-align: left;
+       margin-top: 2px;
+}
+.a-img a{
+    margin: 0 auto;
+    height: 180px;
+    display: block;
+    /*border: 1px solid #ccc;*/
+    /*padding: 2px;*/
+    /*width: 100%;*/
+    text-decoration: none;
+    background: #fff;
+    position: relative;
+    /*transition: all 0.6s;*/
+}
+.tw:visited{color: #666666}
+.tw:link{color: black}
+.tw:hover{color: #E12F02;transform: scale(1.05)}
+.tw:active{color: #0000FF;}
+.snum{position: absolute;
+     bottom: 10px;
+     right: 40%;
+     background-color: white}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    font-size:0;
+}
+.clearfix:before{
+    content: "";
+    display: table;
+    clear: both;}
+#item{
+    width: 1000px;
+    background-color: #3e03fc;
+    list-style: none;
+    overflow: hidden}
+#item li a{
+    float: left;
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+    padding-right: 16px;
+    text-decoration: none;
+    }
+#item li a:visited{color:#FFFFFF }
+/*#item li a:link{color: black}*/
+#item li a:hover{background-color:#18c2c8;}
+#item li a:active{color: #FF0000}
+
+.input{
+    float: right;
+    display: inline-block;
+    margin-top: 10px;
+}
+.input_text{
+    width: 400px;
+    height: 26px;
+    display: inline-block;
+    /*padding: 0;*/
+    border: 2px solid #18c2c8;
+    float: left;
+    text-indent:6px;
+    padding-left: 5px;
+}
+input::-webkit-input-placeholder {
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.input_bt{
+    margin-left: 0;
+    padding: 0;
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
+    border: 2px solid #18c2c8;
+    background-image: url("../img/搜索图标1.jpg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-color: #18c2c8;
+    float: left;
+}
+.input p {text-align: left}
+.input p span{font-style: italic;color: #18c2c8;
+}
+.input p a{text-decoration: none}
+.input p a:visited{color: #666666}
+.input p a:link{color: black}
+.input p a:hover{color:#E12F02;text-decoration:underline;}
+.input p a:active{color: #0000FF;}
+ .header_alt{
+    display: inline-block;
+    float: right;
+    width: 120px;
+     margin-top: 10px;
+     text-align: center;
+}
+ .header_alt a{
+    display: inline-block;
+     float: left;
+     height: 13px;
+     padding:2px;
+}
+ .logo-input{
+     margin-top: 15px;
+     width: 1000px;
+     height: 80px;
+ }
+ .logo{
+     float: left;
+     display: block;
+     margin-top:10px;
+ }
+ .dyfl{
+     float: left;
+     height: 25px;
+     margin-top: 8px;
+     padding-left: 2px;
+     margin-bottom: 8px;
+
+ }
+.dyfl img{float: left;width: 25px;height: 25px}
+ .dyfl p span{
+     color: #1f3eff;
+     font-size: large;
+ }
+ .dyfl p a{text-decoration: none}
+.dyfl p a:visited{color: #666666}
+.dyfl p a:link{color: black}
+.dyfl p a:hover{color:#E12F02;text-decoration:underline;}
+.dyfl p a:active{color: #0000FF;}
+.dsjfl{
+    float: right;
+    /*border-left: 8px solid #0000FF;*/
+    height: 25px;
+    margin-top: 8px;
+    padding-left: 2px;
+    margin-bottom: 8px;
+    /*border-style: solid;*/
+}
+.dsjfl img{float: left;width: 25px;height: 25px}
+.dsjfl p span{
+    color: #1f3eff;
+    font-size: large;
+    padding-left: 0px;
+}
+.dsjfl p a{text-decoration: none}
+.dsjfl p a:visited{color: #666666}
+.dsjfl p a:link{color: black}
+.dsjfl p a:hover{color:#E12F02;text-decoration:underline;}
+.dsjfl p a:active{color: #0000FF;}
+ .dsj{
+     height: 580px;
+     margin-top: 6px;
+     border: 1px solid #dedede;
+
+ }
+ .dsj div{float: left}
+.dm{
+    height: 580px;
+    margin-top: 6px;
+    border: 1px solid #dedede;
+
+}
+.dm div{float: left}
+.zy{
+    height: 580px;
+    margin-top: 6px;
+    border: 1px solid #dedede;
+
+}
+.zy div{float: left}
+.foot{
+    width: 100%;
+    border-top:2px solid #FF0000;
+    margin-top: 6px;
+    margin-left: 0px;
+    text-align: center;
+
+}
+.foot p{
+    margin-top: 10px;
+}

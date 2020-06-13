@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0}
+
+input{outline: none;}
+
+.total{
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 1000px;}
+
+.head{
+    margin-top: 18px;
+    height: 90px;
+}
+
+
+.logo{
+    float: left;
+    display: block;
+    margin-top:10px;}
+
+.search{
+    float: right;
+    display: inline-block;
+    margin-top: 14px;
+}
+
+.search_form{
+    display: inline-block;
+    width: 100%
+}
+.search_form_text{
+    width: 400px;
+    height: 29px;
+    display: inline-block;
+    border: 2px solid #18c2c8;
+    float: left;
+    text-indent:8px;
+}
+
+.search_form_text:-webkit-autofill{
+    -webkit-text-fill-color: #333;
+    box-shadow: 0 0 0 1000px #eaeaea inset
+}
+
+input::-webkit-input-placeholder {
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.search_form_bt{
+    margin-left: 0;
+    padding:0;
+    display: inline-block;
+    width: 90px;
+    height: 33px;
+    font-size: 15px;
+    border: 2px solid #18c2c8;
+    background-image: url("../img/搜索图标1.jpg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-color: #18c2c8;
+    float: left;
+}
+
+.search p {
+    text-align: left;
+    margin-left: -125px;
+}
+.search p span{
+    font-style: italic;
+    color: #c81b10;
+}
+.search p a{text-decoration: none}
+.search p a:visited{color: #666666}
+.search p a:link{color: black}
+.search p a:hover{color:#E12F02;text-decoration:underline;}
+.search p a:active{color: #0000FF;}
+
+.head_a{
+    display: inline-block;
+    float: right;
+    width: 120px;
+    margin-top: 8px;
+    margin-left: 4px;
+    text-align: left;
+}
+
+.head_a a{
+    display: inline-block;
+    text-decoration: none;
+    float: left;
+    height: 13px;
+    font-size: 14px;
+    color: #c81b10;
+    padding:2px;
+}
+
+.head_item{
+    width: 1000px;
+    border: 1px solid #dedede;
+}
+
+.head_item_ul{
+    width: 1001px;
+    background-color: #3e03fc;
+    list-style: none;
+    overflow: hidden;
+
+}
+
+.head_item_ul li {
+    float: left;
+    /*display: block;*/
+    font-size: 15px;
+}
+
+.head_item_ul .active{
+    background-color: #c8440d;
+
+}
+
+.head_item_ul li a{
+    float: left;
+    display: block;
+    /*font-size: 15px;*/
+    color: #FFFFFF;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+
+.head_item_ul li a:visited{color:#FFFFFF }
+/*item li a:link{color: black}*/
+.head_item_ul li a:not(.active):hover{background-color:#18c2c8;}
+/*.head_item_ul li a:active{color: #FF0000}*/
+
+.movie_classify{
+    float: left;
+    background-image: url("../img/timg2.jpg");
+    /*background-position: 0px px;*/
+    background-repeat: no-repeat;
+    background-size: 23px 25px;
+    height: 25px;
+    margin-top: 8px;
+    padding-left: 2px;
+    margin-bottom: 8px;}
+
+.movie_classify p span{
+    color: #1f3eff;
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 2px;
+    /*font-size: large;*/
+}
+
+.movie_classify p a{text-decoration: none;margin-top: 2px}
+
+.movie_classify p a:visited{color: #666666}
+.movie_classify p a:link{color: black}
+.movie_classify p a:hover{color:#E12F02;text-decoration:underline;}
+.movie_classify p a:active{color: #0000FF;}
+
+.teleplay_classify{
+    float: right;
+    height: 25px;
+    margin-top: 10px;
+    padding-left: 2px;
+    margin-bottom: 4px;
+}
+
+.teleplay_classify p span{
+    color: #1f3eff;
+    /*padding-top: 2px;*/
+    /*font-size: large;*/
+    /*padding-left: 0px;*/
+}
+
+.teleplay_classify p a{text-decoration: none;margin-top: 2px}
+
+.teleplay_classify p a:visited{color: #666666}
+.teleplay_classify p a:link{color: black}
+.teleplay_classify p a:hover{
+    color:#E12F02;
+    text-decoration:underline;}
+.teleplay_classify p a:active{color: #0000FF;}
+
+.footer{
+    width: 100%;
+    border-top:2px solid #FF0000;
+    margin-top: 6px;
+    margin-left: 0px;
+    text-align: center;
+
+}
+
+.footer p{
+    margin-top: 10px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    font-size:0;
+}
+.clearfix:before{
+    content: "";
+    display: table;
+    clear: both;}
+
+.clearfix{
+    *zoom:1;
+}
+
+
+
+
+
+

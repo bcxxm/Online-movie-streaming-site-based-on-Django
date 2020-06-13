@@ -1,0 +1,223 @@
+
+.context{
+    width: 1000px;
+    border: 1px solid #dedede;
+    margin:8px auto;
+}
+
+/*左边开始*/
+.left_list{
+    width: 73%;
+    /*border: 1px solid #dedede;*/
+    height: 1320px;
+    float: left;
+    padding: 15px;
+}
+
+.left_list_head{
+    width: 707px;
+    height: 25px;
+    font-size: 15px;
+    padding: 8px;
+    border: 1px solid #dedede;
+}
+
+.left_list_head .one{
+    float: left;
+
+}
+
+.left_list_head .two{
+    float: right;
+}
+
+/*电影列表开始*/
+.tv_list{
+    margin-top: 10px;
+    /*padding: 8px;*/
+     /*border: 1px solid #dedede;*/
+    height: 1200px;
+}
+
+.con_tv_ul li {
+    list-style:none;
+    width: 118px;
+    height: 240px;
+    padding: 0 12px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+
+.con_tv_con div a{
+    margin: 0 auto;
+    width: 118px;
+    height: 158px;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-decoration: none;
+    background: #fff;
+    position: relative;
+    /*transition: all 0.6s;*/
+}
+
+.con_tv_con div a img{
+    display: block;
+    width: 118px;
+    height: 158px;
+
+}
+
+.con_tv_con p{
+    width: 118px;
+    height: 18px;
+    line-height: 18px;
+    text-align: left;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.con_tv_a:hover{
+    border: 1px solid #E12F02;
+    /*transform: scale(1.05)*/
+}
+.con_tv_a:active{ border: 1px solid #0000FF;}
+
+.snum{
+    position: absolute;
+    bottom: 5px;
+    right:1.5%;
+    background-color: white
+}
+
+/*分页导航开始*/
+.step-links{margin-top: 15px}
+.step-links a{
+    display:inline-block;
+    border: 1px solid #dedede;
+    padding: 6px 10px;
+    font-size: 15px;
+    font-family: "微软雅黑";
+    text-decoration: none;
+    }
+     /*.step-links a:link{background-color:#dedede}*/
+     .step-links a:hover{background-color:#18c2c8;}
+     .step-links a:active{background-color: #E12F02;}
+    ul{}
+    li{list-style:none;}
+    .pageAll{overflow:hidden;width: 720px;height: 35px;border: 1px solid #dedede;padding: 8px 6px;}
+    .pageAll div{float: left}
+    .pageNum .active{
+        background-color: #18c2c8;
+        display:inline-block;
+        border: 1px solid #dedede;
+        padding: 6px 10px;
+        font-size: 15px;
+        }
+    .pageAll .pageEnd{display: inline}
+    .pageAll .pageEnd span{
+        display: inline-block;
+         border: 1px solid #dedede;
+        padding: 6px 10px;
+        font-size: 15px;
+    }
+    .pagePre{margin-left: 60px}
+    .pageNum{margin:0px 10px;}
+    .current{width: 1500px;overflow: hidden}
+    .current div{float: left;width: 25%;overflow: hidden;margin: 5px}
+    .current img{float: left;width: 150px;height: 200px}
+    .current li{float: left;width: 200px;overflow: hidden;margin-left: 5px;}
+    .current li p{overflow: hidden;margin: 10px;height: 20px}
+
+/*右边列表开始*/
+.right_list{
+    width: 21%;
+    float: right;
+    /*margin-top: 10px;*/
+    /*height: 1200px;*/
+    /*border: 1px solid #dedede;*/
+    /*padding-left: 10px;*/
+}
+
+.right_list_head {
+    height: 25px;
+    /*width: 200px;*/
+    padding: 10px 3px;
+    /*margin-top:6px;*/
+    border-bottom:1px solid #dedede;
+    border-left: 1px solid #dedede;
+    /*vertical-align: center;*/
+}
+
+.right_list h4{
+    float: left;
+    /*border-left: 8px solid #0000FF;*/
+    font-size: 15px;
+    margin-left: 5px;
+    /*margin-top: 1%;*/
+}
+
+.right_list_head a {
+    float: right;
+    display: block;
+    font: 14px "Microsoft YaHei";
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.right_list_ul{
+    /*padding-left: 8px;*/
+}
+
+.right_list_ul ul li {
+    border-bottom:1px solid #dedede;
+    border-left: 1px solid #dedede;
+    padding-left: 8px;
+    height:30px;
+    overflow: hidden;
+    list-style:none;
+}
+
+.pf_right_li_con{
+    vertical-align: center;
+    width: 180px;
+    padding-top: 4px;
+}
+.pf_right_li_con a{
+    float: left;
+    margin-left: 6px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.pf_right_li_con a:visited{color: #666666}
+.pf_right_li_con a:link{color: black}
+.pf_right_li_con a:hover{color:#E12F02;text-decoration:underline;}
+.pf_right_li_con a:active{color: #0000FF;}
+
+.pf_right_li_con .num{
+    float: left;
+    display: inline-block;
+    padding: 1px;
+    margin-top: 1px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background-color: #fb4e26;
+    vertical-align: middle;
+}
+
+.pf_right_li_con .pf{
+    float: right;
+    font-size: 15px
+}
+
+/*空块*/
+.empty_div{
+    /*width:23%;*/
+    height: 200px;
+    /*float: right;*/
+    /*border: 1px solid #dedede;*/
+    margin: 8px 0;
+}

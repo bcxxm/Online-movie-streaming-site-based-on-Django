@@ -1,0 +1,49 @@
+{% extends 'polltest/base.html' %}
+{% load static from staticfiles%}
+
+{% block title %} <title>杰士凡影视/{{ text }}</title> {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polltest/css/search.css' %}">
+{% endblock %}
+
+{% block base %}
+<div class="result">
+    {% if con|length_is:'0' %}
+        <div class="noFinding">
+            <p>抱歉，没有您想要的影片</p>
+            <img src="{% static 'polltest/img/noFalling.jpg' %}">
+        </div>
+    {% else %}
+        {% for f in con %}
+            {% for fo in model_list %}
+             {% if forloop.counter == forloop.parentloop.counter %}
+                {% for foo in  f %}
+                <div class="messages">
+                    <a class="left_img" href="/{{ fo }}/{{ foo.id }}" target="_blank">
+                        <img src="{{foo.imgurl}}">
+                    </a>
+                    <div class="right_message">
+                        <h2 class="name">{{ foo.tv_name }}</h2>
+                        <p>主演：{{ foo.star }}</p>
+                        <p>类型：{{ foo.tv_type }}</p>
+                        <p>导演：{{ foo.director }}</p>
+                        {% if foo.intro %}
+                        <p class="intro">剧情：{{ foo.intro }}</p>
+                         {% else %}
+                          <p class="intro">剧情：........</p>
+                        {% endif %}
+                        <p class="detail_intro">
+                        <span>.......</span>
+                        <a href="/{{ fo }}/{{ foo.id }}" target="_blank"> 详细信息》</a>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+             {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}
